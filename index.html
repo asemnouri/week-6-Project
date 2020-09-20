@@ -11,7 +11,7 @@
     <!--nav bar  -->
     <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="#" onclick="myHome()">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" onclick="mySchedule()">My Schedule</a>
@@ -24,16 +24,26 @@
         <li class="nav-item clock">
         </li>
       </ul>
-      <h1>Welcome To Your Schedule</h1>
+      <h1 class='ES'>Welcome To Employee List</h1>
+      <h1 class='SC'>Welcome To Your Schedule</h1>
+      <!-- the dropDown -->
+      
       <!-- add tasks and remove task-->
-      <div class='todo-tasks'>
+      <div class="buttons ES ">
+        <button type="button" class="btn btn-outline-primary martin">Martin</button>
+        <button type="button" class="btn btn-outline-secondary">Sami</button>
+        <button type="button" class="btn btn-outline-success">Saeed</button>
+        <button type="button" class="btn btn-outline-danger">Dalia</button>
+        <button type="button" class="btn btn-outline-warning">Waseem</button>
+      </div>
+
+      <div class='todo-tasks SS SC'>
         <div class="input-container">
           <input type="text" id ="input-task">
           <button id="add-task">add</button>
           <input type="button" value="remove" class='remove-me'/>
           <input type="button" value="completed" class="complete-button"/>
         </div>
-    
         <div  id="list-container">
           <ul id="todo-list" style="align-content:center">
           </ul>
@@ -41,11 +51,15 @@
       <div id='todo-list'>
       </div>
     </div>
+
+    
+      <!-- add tasks and remove task-->
+     
     <!-- completed tasks -->
 
     <!-- for displaying and changing the colors -->
-	<input class="color1" type="color" name="color1" value="#00ff00">
-    <input class="color2" type="color" name="color2" value="#ff0000">
+	<!-- <input class="color1" type="color" name="color1" value="#00ff00">
+    <input class="color2" type="color" name="color2" value="#ff0000"> -->
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

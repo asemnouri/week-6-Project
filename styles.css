@@ -10,3 +10,6 @@ body {
     top: 15%;
 	background: linear-gradient(to right,white , white); 
  }
+ .buttons{
+     margin: 10px;
+ }

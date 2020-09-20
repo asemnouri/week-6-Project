@@ -1,19 +1,19 @@
 //js for colors
-var color1 = document.querySelector(".color1");
-var color2 = document.querySelector(".color2");
-var body = document.getElementById("gradient");
+// var color1 = document.querySelector(".color1");
+// var color2 = document.querySelector(".color2");
+// var body = document.getElementById("gradient");
 
-function setGradient() {
-	body.style.background = 
-	"linear-gradient(to right, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ ")";
-}
+// function setGradient() {
+// 	body.style.background = 
+// 	"linear-gradient(to right, " 
+// 	+ color1.value 
+// 	+ ", " 
+// 	+ color2.value 
+// 	+ ")";
+// }
 
-color1.addEventListener("input", setGradient);
-color2.addEventListener("input", setGradient);
+// color1.addEventListener("input", setGradient);
+// color2.addEventListener("input", setGradient);
 //////////////////////////////////////////////////////////////////////////////////
 //setting the time and date in the nav
 setInterval(function(){
@@ -29,10 +29,12 @@ addButton.on('click',function(){
     alert("You must write something!")
   }
   else{
-    var li= $('<h3></h3>');
-    li.appendTo($("#todo-list"));  ///working 
+	var div=$('<div class="task-box"></div')
+	var li= $('<h3></h3>');
+	li.appendTo(div)
+    div.appendTo($("#todo-list"));  ///working 
     li.append(newTask)
-    $("#input-task").val("") //to clear the text input 
+	$("#input-task").val("") //to clear the text input 
   }
 })
 //////////////////////////////////////
@@ -44,21 +46,13 @@ remove.on('click',function(){
    alert("There is no more task to remove")
    }
    else{
-  $("ul h3").last().remove()
+  $("ul div ").last().remove()
   }
 })
 //////////////////////////////////////
-//changing the margin 
-// document.body.style.textAlign="center" ///not Jq
-// document.body.style.maxWidth="400px" ///not Jq
-// document.body.style.margin="auto" ///not Jq
-//////////////////////////////////////
-///changing header color.
-$("#main-header").css('color','red')
-//////////////////////////////////////
-var ul=$("#todo-list")
-ul.on('click',function(e){ 
-    $('h3').each(function(){
+//mark as completed
+$("#todo-list").on('click',function(e){ 
+    $('div ').each(function(){
             if(e.target.innerText===$(this).text()){
               if(e.target.style.textDecoration != 'line-through'){
                 $(this).css('text-decoration','line-through')
@@ -81,7 +75,36 @@ completed.appendTo($(".input-container"));
 completed.on('click',function(){
     $('.completed').remove()
 
-}) 
+})
+
+////////////////////////
+
+//default hidden items
+	$('.ES').hide()
+	$('.SC').hide()
+	$('.SS').hide()
+
+function mySchedule(){
+	$('.ES').hide()
+	$('.SC').show()
+	// $('.SS').show()
+}
+
+function employeesSchedule(){
+	$('.ES').show()
+	$('.SC').hide()
+	$('buttons').show()
+	// $('.SS').show()
 
 
-
+}
+	
+function myHome(){
+	$('.ES').hide()
+	$('.SC').hide()
+	$('.SS').hide()
+}
+///////////////////////////////
+$('.martin').on('click',function(){
+	$('.todo-tasks').show()
+})
